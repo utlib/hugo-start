@@ -18,22 +18,18 @@ module.exports = function(grunt) {
 		},
 
 		// Compiles LESS files to CSS
-		less: {
+		sass: {
 			dev: {
-				paths: ['less/'],
-				src: ['less/main.less'],
+				paths: ['sass/'],
+				src: ['sass/main.scss'],
 				dest: 'static/css/<%= name_asset %>.<%= pkg.version %>.css'
 			},
 			dist: {
-				paths: ['less/'],
+				paths: ['sass/'],
 				src: ['less/main.less'],
-				dest: 'static/css/<%= name_asset %>.<%= pkg.version %>.min.css',
+				dest: 'sass/css/<%= name_asset %>.<%= pkg.version %>.min.css',
 				options: {
-					plugins: [
-						new (require('less-plugin-autoprefix'))({
-							browsers: ['> 0.1%']
-						}), new (require('less-plugin-clean-css'))({})
-					]
+					style: ''
 				}
 			}
 		},
@@ -105,9 +101,9 @@ module.exports = function(grunt) {
 				atBegin: true,
 				livereload: true
 			},
-			less: {
-				files: ['less/**/*.less'],
-				tasks: ['less:dev']
+			sass: {
+				files: ['sass/**/*.scss'],
+				tasks: ['sass:dev']
 			},
 			concat: {
 				files: ['js/**/*.js'],
@@ -175,7 +171,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('dev', [
 		'clean:assets',
 		'clean:dev',
-		'less:dev',
+		'sass:dev',
 		'concat:js',
 		'copy:vendor',
 		'hugo:dev'
@@ -183,7 +179,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('dist', [
 		'clean:assets',
 		'clean:dist',
-		'less:dist',
+		'sass:dist',
 		'concat:js',
 		'uglify',
 		'copy:vendor',
