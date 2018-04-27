@@ -3,13 +3,13 @@ Hugo Start
 
 [![Build Status](https://travis-ci.org/florenthobein/hugo-start.svg?branch=master)](https://travis-ci.org/florenthobein/hugo-start)
 
-Simple [hugo](https://gohugo.io/) backbone using [bower](https://bower.io/) for public library management, [LESS](http://lesscss.org/) as a style preprocessor & the [grunt](https://gruntjs.com/) task runner
+Simple [hugo](https://gohugo.io/) backbone using [bower](https://bower.io/) for public library management, [SASS](https://sass-lang.com/) as a style preprocessor & the [grunt](https://gruntjs.com/) task runner
 
 ## Features
 
 - Static generation ;
 - Live reload for development ;
-- Support for LESS ;
+- Support for SASS ;
 - Support for i18n ;
 - Assets processing ;
 - Because the hugo structure is kept intact, you can still use the `hugo` CLI.
